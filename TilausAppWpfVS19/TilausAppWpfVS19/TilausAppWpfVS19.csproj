@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Asiakkaat.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Henkilot.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Postitoimipaikat.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tilaukset.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TilausModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TilausModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TilausModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TilausModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TilausModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Tilausrivit.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tuotteet.cs">
+      <DependentUpon>TilausModel.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,13 +128,36 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="TilausModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TilausModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TilausModel.edmx.diagram">
+      <DependentUpon>TilausModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TilausModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TilausModel.edmx</DependentUpon>
+      <LastGenOutput>TilausModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TilausModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TilausModel.edmx</DependentUpon>
+      <LastGenOutput>TilausModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

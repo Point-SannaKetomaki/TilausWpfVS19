@@ -24,5 +24,10 @@ namespace TilausAppWpfVS19
         {
             InitializeComponent();
         }
+
+        private void CbAsiakkaat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
