@@ -54,5 +54,45 @@ namespace TilausAppWpfVS19
             txtAsiakasNumero.Text = "";
             txtAsiakasNumero.Text = AsiakasNumero.ToString(); //tulostetaan valitun asiakkaan as.numero
         }
+
+        private void BtnLuoTilaus_Click(object sender, RoutedEventArgs e)
+        {
+            TilausOtsikko uusiTilaus = new TilausOtsikko();  //luodaan uusi olio: uusiTilaus
+            uusiTilaus.AsiakasNumero = int.Parse(txtAsiakasNumero.Text);
+            uusiTilaus.ToimitusOsoite = txtToimitusOsoite.Text;
+            uusiTilaus.Postinumero = txtPostiNumero.Text;
+            uusiTilaus.TilausPvm = dpTilausPaiva.SelectedDate.Value;
+            uusiTilaus.ToimitusPvm = dpToimitusPaiva.SelectedDate.Value;
+            txtToimitusAika.Text = uusiTilaus.LaskeToimitusAika();
+
+            txtTilausNumero.Text = VieTilausKantaan(uusiTilaus); //tietojen vienti kantaan EF:n avulla
+        }
+        //
+
+        private string VieTilausKantaan(TilausOtsikko uusiTilaus)
+        {
+            try
+            {
+                TilausDBEntities entities = new TilausDBEntities();
+                Tilaukset dbItem = new Tilaukset()  // uusi rivi Tilaukset-tauluun 
+                {
+                    AsiakasID = uusiTilaus.AsiakasNumero,
+                    Toimitusosoite = uusiTilaus.ToimitusOsoite,
+                    Postinumero = uusiTilaus.Postinumero,
+                    Tilauspvm = uusiTilaus.TilausPvm,
+                    Toimituspvm = uusiTilaus.ToimitusPvm
+                };
+
+                entities.Tilaukset.Add(dbItem);
+                entities.SaveChanges();
+
+                int id = dbItem.TilausID; //haetaan juuri tallennetun tilauksen ID (=PK)
+                return id.ToString(); //palautetaan em. id käyttöliittymään merkiksi onnistuneesta tallennuksesta
+            }
+            catch (Exception)
+            {
+                return "0";
+            }
+        }
     }
 }

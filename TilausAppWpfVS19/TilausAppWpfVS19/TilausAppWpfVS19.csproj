@@ -92,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TilausModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TilausOtsikko.cs" />
     <Compile Include="Tilausrivit.cs">
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
