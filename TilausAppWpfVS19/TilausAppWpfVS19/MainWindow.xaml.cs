@@ -57,15 +57,30 @@ namespace TilausAppWpfVS19
 
         private void BtnLuoTilaus_Click(object sender, RoutedEventArgs e)
         {
-            TilausOtsikko uusiTilaus = new TilausOtsikko();  //luodaan uusi olio: uusiTilaus
-            uusiTilaus.AsiakasNumero = int.Parse(txtAsiakasNumero.Text);
-            uusiTilaus.ToimitusOsoite = txtToimitusOsoite.Text;
-            uusiTilaus.Postinumero = txtPostiNumero.Text;
-            uusiTilaus.TilausPvm = dpTilausPaiva.SelectedDate.Value;
-            uusiTilaus.ToimitusPvm = dpToimitusPaiva.SelectedDate.Value;
+            TilausOtsikko uusiTilaus = new TilausOtsikko
+            {
+                //luodaan uusi olio: uusiTilaus
+                AsiakasNumero = int.Parse(txtAsiakasNumero.Text),
+                ToimitusOsoite = txtToimitusOsoite.Text,
+                Postinumero = txtPostiNumero.Text,
+                TilausPvm = dpTilausPaiva.SelectedDate.Value,
+                ToimitusPvm = dpToimitusPaiva.SelectedDate.Value
+            };
+
+            //TÄSSÄ PITEMPI VERSIO TUOSTA EDELLISESTÄ
+            //TilausOtsikko uusiTilaus = new TilausOtsikko();  //luodaan uusi olio: uusiTilaus
+            //uusiTilaus.AsiakasNumero = int.Parse(txtAsiakasNumero.Text);
+            //uusiTilaus.ToimitusOsoite = txtToimitusOsoite.Text;
+            //uusiTilaus.Postinumero = txtPostiNumero.Text;
+            //uusiTilaus.TilausPvm = dpTilausPaiva.SelectedDate.Value;
+            //uusiTilaus.ToimitusPvm = dpToimitusPaiva.SelectedDate.Value;
+            //txtToimitusAika.Text = uusiTilaus.LaskeToimitusAika();
+
             txtToimitusAika.Text = uusiTilaus.LaskeToimitusAika();
 
             txtTilausNumero.Text = VieTilausKantaan(uusiTilaus); //tietojen vienti kantaan EF:n avulla
+
+            //TODO: Tallennetun tilauksen yhteenveto ruudulle
         }
         //
 
@@ -83,8 +98,8 @@ namespace TilausAppWpfVS19
                     Toimituspvm = uusiTilaus.ToimitusPvm
                 };
 
-                entities.Tilaukset.Add(dbItem);
-                entities.SaveChanges();
+                entities.Tilaukset.Add(dbItem); //viedään tiedot kantaan
+                entities.SaveChanges(); //tallennetaan muutokset
 
                 int id = dbItem.TilausID; //haetaan juuri tallennetun tilauksen ID (=PK)
                 return id.ToString(); //palautetaan em. id käyttöliittymään merkiksi onnistuneesta tallennuksesta

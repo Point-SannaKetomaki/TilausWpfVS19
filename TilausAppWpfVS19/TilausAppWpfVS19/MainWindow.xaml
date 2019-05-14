@@ -5,30 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TilausAppWpfVS19"
         mc:Ignorable="d"
-        Title="MainWindow" Height="620.43" Width="1003.241">
+        Title="Tilaustenkäsittelyjärjestelmä ver 0.1" Height="620.43" Width="1003.241">
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="189" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="978"/>
         <Label x:Name="lblTilausNumero" Content="Tilausnumero" HorizontalAlignment="Left" Height="27" Margin="28,58,0,0" VerticalAlignment="Top" Width="88"/>
-        <TextBox x:Name="txtTilausNumero" HorizontalAlignment="Left" Height="22" Margin="131,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="378" Margin="10,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="306"/>
+        <TextBox x:Name="txtTilausNumero" HorizontalAlignment="Left" Height="27" Margin="131,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" FontStyle="Italic" Text="Tilausnumero"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="378" Margin="10,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="229"/>
         <Label x:Name="lblRivitiedot" Content="Rivitiedot" HorizontalAlignment="Left" Margin="28,204,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="lblTilausOtsikko" Content="Tilauksen perustiedot" HorizontalAlignment="Left" Margin="28,23,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="378" Margin="337,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="651"/>
-        <Label x:Name="lblTilausRivit" Content="Tilausrivit" HorizontalAlignment="Left" Margin="363,204,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="lblAsiakas" Content="Asiakas" HorizontalAlignment="Left" Margin="415,55,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbAsiakkaat" HorizontalAlignment="Left" Height="22" Margin="547,59,0,0" VerticalAlignment="Top" Width="204" DropDownClosed="CbAsiakkaat_DropDownClosed"/>
-        <TextBox x:Name="txtAsiakasNumero" HorizontalAlignment="Left" Height="22" Margin="770,59,0,0" TextWrapping="Wrap" Text="Asiakasnumero" VerticalAlignment="Top" Width="94" FontStyle="Italic"/>
-        <Label x:Name="lblTilausPvm" Content="Tilauspäivä" HorizontalAlignment="Left" Margin="28,86,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblToimitusPvm_" Content="Toimituspäivä" HorizontalAlignment="Left" Margin="28,119,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTilausOtsikko" Content="Tilausotsikko" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="378" Margin="244,204,0,0" Stroke="Black" VerticalAlignment="Top" Width="744"/>
+        <Label x:Name="lblTilausRivit" Content="Tilausrivit" HorizontalAlignment="Left" Margin="259,204,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lblAsiakas" Content="Asiakas" HorizontalAlignment="Left" Margin="415,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbAsiakkaat" HorizontalAlignment="Left" Height="27" Margin="547,58,0,0" VerticalAlignment="Top" Width="323" DropDownClosed="CbAsiakkaat_DropDownClosed"/>
+        <TextBox x:Name="txtAsiakasNumero" HorizontalAlignment="Left" Height="27" Margin="875,57,0,0" TextWrapping="Wrap" Text="Asiakasnumero" VerticalAlignment="Top" Width="94" FontStyle="Italic"/>
+        <Label x:Name="lblTilausPvm" Content="Tilauspäivä" HorizontalAlignment="Left" Margin="28,91,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label x:Name="lblToimitusPvm_" Content="Toimituspäivä" HorizontalAlignment="Left" Margin="28,124,0,0" VerticalAlignment="Top" Height="27"/>
         <Label x:Name="lblToimitusOsoite" Content="Toimitusosoite" HorizontalAlignment="Left" Margin="415,86,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPostiNumero" Content="Postinumero" HorizontalAlignment="Left" Margin="415,117,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtToimitusOsoite" HorizontalAlignment="Left" Height="23" Margin="547,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
-        <Label x:Name="lblToimitusAika" Content="Toimitusaika pv" HorizontalAlignment="Left" Margin="28,154,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPostiNumero" HorizontalAlignment="Left" Height="23" Margin="547,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="dpTilausPaiva" HorizontalAlignment="Left" Height="25" Margin="131,90,0,0" VerticalAlignment="Top" Width="167"/>
-        <DatePicker x:Name="dpToimitusPaiva" HorizontalAlignment="Left" Height="25" Margin="131,121,0,0" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="txtToimitusAika" HorizontalAlignment="Left" Height="22" Margin="131,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
+        <TextBox x:Name="txtToimitusOsoite" HorizontalAlignment="Left" Height="27" Margin="547,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422"/>
+        <Label x:Name="lblToimitusAika" Content="Toimitusaika pv" HorizontalAlignment="Left" Margin="28,154,0,0" VerticalAlignment="Top" Height="27"/>
+        <TextBox x:Name="txtPostiNumero" HorizontalAlignment="Left" Height="27" Margin="547,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dpTilausPaiva" HorizontalAlignment="Left" Height="27" Margin="131,95,0,0" VerticalAlignment="Top" Width="167"/>
+        <DatePicker x:Name="dpToimitusPaiva" HorizontalAlignment="Left" Height="27" Margin="131,126,0,0" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="txtToimitusAika" HorizontalAlignment="Left" Height="27" Margin="131,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88"/>
         <Button x:Name="btnLuoTilaus" Content="Luo tilaus" HorizontalAlignment="Left" Height="27" Margin="846,154,0,0" VerticalAlignment="Top" Width="123" Click="BtnLuoTilaus_Click"/>
+        <ComboBox x:Name="cbTuoteTiedot" HorizontalAlignment="Left" Height="27" Margin="28,269,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label x:Name="lblTuoteTiedot" Content="Valitse tuote" HorizontalAlignment="Left" Height="26" Margin="28,240,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtTuotekoodi" HorizontalAlignment="Left" Height="27" Margin="28,301,0,0" TextWrapping="Wrap" Text="Tuotekoodi" VerticalAlignment="Top" Width="200" FontStyle="Italic"/>
+        <Label x:Name="lblMaara" Content="Määrä" HorizontalAlignment="Left" Height="26" Margin="28,345,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtMaara" HorizontalAlignment="Left" Height="27" Margin="28,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontStyle="Italic"/>
+        <Label x:Name="lblHinta" Content="Hinta" HorizontalAlignment="Left" Height="26" Margin="28,403,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtHinta" HorizontalAlignment="Left" Height="27" Margin="28,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontStyle="Italic"/>
+        <Label x:Name="lblYhteensa" Content="Yhteensä" HorizontalAlignment="Left" Height="26" Margin="28,461,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="txtYhteensa" HorizontalAlignment="Left" Height="27" Margin="28,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontStyle="Italic"/>
+        <Button x:Name="btnLisaaRivi" Content="Lisää rivi" HorizontalAlignment="Left" Height="27" Margin="67,534,0,0" VerticalAlignment="Top" Width="107"/>
 
     </Grid>
 </Window>

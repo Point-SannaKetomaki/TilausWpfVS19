@@ -56,7 +56,7 @@ namespace TilausAppWpfVS19
         internal string LaskeToimitusAika()
         {
             TimeSpan erotus;
-            erotus = ToimitusPvm.Subtract(tilausPvm);
+            erotus = toimitusPvm.Subtract(tilausPvm);
             return erotus.Days.ToString();
         }
     }
