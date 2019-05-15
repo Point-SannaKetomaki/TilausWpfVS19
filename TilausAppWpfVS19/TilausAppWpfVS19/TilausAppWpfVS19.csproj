@@ -68,6 +68,11 @@
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
     <Compile Include="cbPairAsiakas.cs" />
+    <Compile Include="cbPairPostinumero.cs" />
+    <Compile Include="cbPairTuote.cs" />
+    <Compile Include="formPostitoimipaikat.xaml.cs">
+      <DependentUpon>formPostitoimipaikat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Henkilot.cs">
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
@@ -93,12 +98,17 @@
       <DependentUpon>TilausModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="TilausOtsikko.cs" />
+    <Compile Include="TilausRivi.cs" />
     <Compile Include="Tilausrivit.cs">
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Tuotteet.cs">
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
+    <Page Include="formPostitoimipaikat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
