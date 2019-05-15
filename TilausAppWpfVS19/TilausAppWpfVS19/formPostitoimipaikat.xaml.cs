@@ -19,9 +19,28 @@ namespace TilausAppWpfVS19
     /// </summary>
     public partial class formPostitoimipaikat : Window
     {
+        TilausDBEntities entities = new TilausDBEntities();
+
         public formPostitoimipaikat()
         {
             InitializeComponent();
+            HaePostitoimipaikat();
+        }
+
+        private void HaePostitoimipaikat()
+        {
+            List<Postitoimipaikat> lstPosTmp = new List<Postitoimipaikat>();
+            
+
+            var postmpt = from posnot in entities.Postitoimipaikat
+                          select posnot;
+
+            dgPostitoimipaikat.ItemsSource = postmpt.ToList();
+        }
+
+        private void BtnSuljePtmip_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

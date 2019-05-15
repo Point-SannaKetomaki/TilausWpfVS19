@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="formPostitoimipaikat" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btnSuljePtmip" Content="Sulje" HorizontalAlignment="Left" Height="27" Margin="654,376,0,0" VerticalAlignment="Top" Width="116" Click="BtnSuljePtmip_Click"/>
+        <Button x:Name="btnTallennaPtmip" Content="Tallenna uusi" HorizontalAlignment="Left" Height="27" Margin="489,133,0,0" VerticalAlignment="Top" Width="90"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="dgPostitoimipaikat" HorizontalAlignment="Left" Height="393" Margin="28,10,0,0" VerticalAlignment="Top" Width="397">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Postinumero}" Header="Postinumero"/>
+                <DataGridTextColumn Binding="{Binding Path=Postitoimipaikka}" Header="Postitoimipaikka" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblValitutPostinumeroTiedot" Content="Postinumerotiedot" HorizontalAlignment="Left" Height="27" Margin="488,23,0,0" VerticalAlignment="Top" Width="249" FontWeight="Bold"/>
+        <TextBox x:Name="txtPosNro" HorizontalAlignment="Left" Height="27" Margin="488,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox x:Name="txtPosTmip" HorizontalAlignment="Left" Height="27" Margin="589,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="btnPäivitäPTmip" Content="Päivitä" HorizontalAlignment="Left" Height="27" Margin="584,133,0,0" VerticalAlignment="Top" Width="90"/>
+        <Button x:Name="btnPoistaPTmip" Content="Poista" HorizontalAlignment="Left" Height="27" Margin="679,133,0,0" VerticalAlignment="Top" Width="90"/>
     </Grid>
 </Window>

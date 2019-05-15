@@ -258,6 +258,10 @@ namespace TilausAppWpfVS19
             cbPostinumerot.ItemsSource = cbPairPostinumerot;
         }
 
-        
+        private void BtnPostitoimipaikat_Click(object sender, RoutedEventArgs e)
+        {
+            formPostitoimipaikat ptmip = new formPostitoimipaikat();
+            ptmip.Show();
+        }
     }
 }

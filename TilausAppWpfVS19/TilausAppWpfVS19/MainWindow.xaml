@@ -47,7 +47,7 @@
         <TextBox x:Name="txtRivienSumma" HorizontalAlignment="Left" Height="27" Margin="547,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Background="#FFF0F0F0" FontStyle="Italic"/>
         <Label x:Name="lblTilauksenArvo" Content="Tilauksen arvo" HorizontalAlignment="Left" Height="27" Margin="415,154,0,0" VerticalAlignment="Top" Width="92"/>
         <Label Content="Tuotekoodi" HorizontalAlignment="Left" Height="27" Margin="28,301,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="btnPostitoimipaikat" Content="Postitoimipaikat" HorizontalAlignment="Left" Height="27" Margin="685,126,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button x:Name="btnPostitoimipaikat" Content="Postitoimipaikat" HorizontalAlignment="Left" Height="27" Margin="685,126,0,0" VerticalAlignment="Top" Width="108" Click="BtnPostitoimipaikat_Click" />
         <ComboBox x:Name="cbPostinumerot" HorizontalAlignment="Left" Margin="547,124,0,0" VerticalAlignment="Top" Width="118" Height="27"/>
 
     </Grid>
