@@ -249,7 +249,7 @@ namespace TilausAppWpfVS19
 
             foreach (var pnro in postinumerot)
             {
-                cbPairPostinumerot.Add(new cbPairPostinumero(pnro.Postinumero, pnro.Postitoimipaikka));
+                cbPairPostinumerot.Add(new cbPairPostinumero(pnro.Postinumero));
             }
 
 

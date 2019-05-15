@@ -9,13 +9,13 @@ namespace TilausAppWpfVS19
     class cbPairPostinumero
     {
         public string postiNumero { get; set; }
-        public string postiToimipaikka { get; set; }
+        
 
 
-        public cbPairPostinumero(string PostiNumero, string PostiToimipaikka)
+        public cbPairPostinumero(string PostiNumero)
         {
             postiNumero = PostiNumero;
-            postiToimipaikka = PostiToimipaikka;
+            
         }
     }
 }
