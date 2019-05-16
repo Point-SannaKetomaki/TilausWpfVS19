@@ -45,7 +45,25 @@ namespace TilausAppWpfVS19
 
         private void DgPostitoimipaikat_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: Tähän vähän koodia
+            if (dgPostitoimipaikat.SelectedIndex >=0)
+            {
+                //haetaan valitun rivin ensimmäisen sarakkeen sisältö
+                TextBlock Postinumero = dgPostitoimipaikat.Columns[0].GetCellContent(
+                    dgPostitoimipaikat.Items[dgPostitoimipaikat.SelectedIndex]) as TextBlock;
+                if (Postinumero != null)
+                {
+                    txtPosNroPoista.Text = Postinumero.Text;
+                }
+
+                //haetaan valitun rivin toisen sarakkeen sisältö
+                TextBlock Postitoimipaikka = dgPostitoimipaikat.Columns[1].GetCellContent(
+                    dgPostitoimipaikat.Items[dgPostitoimipaikat.SelectedIndex]) as TextBlock;
+                if (Postitoimipaikka != null)
+                {
+                    txtPosTmipPoista.Text = Postitoimipaikka.Text;
+                }
+            }
+            
         }
 
         private void BtnLisaaPtmip_Click(object sender, RoutedEventArgs e)
@@ -57,6 +75,23 @@ namespace TilausAppWpfVS19
             entities.SaveChanges();
 
             HaePostitoimipaikat();
+            txtPosNro.Text = "";
+            txtPosTmip.Text = "";
+        }
+
+        private void BtnPoistaPTmip_Click(object sender, RoutedEventArgs e)
+        {
+            Postitoimipaikat post = entities.Postitoimipaikat.Find(txtPosNroPoista.Text);
+
+            if (post != null)
+            {
+                entities.Postitoimipaikat.Remove(post);
+                entities.SaveChanges();
+            }
+
+            HaePostitoimipaikat();
+            txtPosNroPoista.Text = "";
+            txtPosTmipPoista.Text = "";
         }
     }
 }
