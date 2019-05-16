@@ -42,5 +42,21 @@ namespace TilausAppWpfVS19
         {
             this.Close();
         }
+
+        private void DgPostitoimipaikat_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //TODO: Tähän vähän koodia
+        }
+
+        private void BtnLisaaPtmip_Click(object sender, RoutedEventArgs e)
+        {
+            Postitoimipaikat post = new Postitoimipaikat();
+            post.Postinumero = txtPosNro.Text;
+            post.Postitoimipaikka = txtPosTmip.Text;
+            entities.Postitoimipaikat.Add(post);
+            entities.SaveChanges();
+
+            HaePostitoimipaikat();
+        }
     }
 }
