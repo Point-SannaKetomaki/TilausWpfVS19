@@ -73,6 +73,9 @@
     <Compile Include="formPostitoimipaikat.xaml.cs">
       <DependentUpon>formPostitoimipaikat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="formTuotetiedot.xaml.cs">
+      <DependentUpon>formTuotetiedot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Henkilot.cs">
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <DependentUpon>TilausModel.tt</DependentUpon>
     </Compile>
     <Page Include="formPostitoimipaikat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="formTuotetiedot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

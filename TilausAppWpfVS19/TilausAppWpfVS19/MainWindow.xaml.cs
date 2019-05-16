@@ -263,5 +263,11 @@ namespace TilausAppWpfVS19
             formPostitoimipaikat ptmip = new formPostitoimipaikat();
             ptmip.Show();
         }
+
+        private void BtnTuotetiedot_Click(object sender, RoutedEventArgs e)
+        {
+            formTuotetiedot tuotetiedot = new formTuotetiedot();
+            tuotetiedot.Show();
+        }
     }
 }
