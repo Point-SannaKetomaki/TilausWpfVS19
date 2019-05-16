@@ -19,9 +19,92 @@ namespace TilausAppWpfVS19
     /// </summary>
     public partial class formTuotetiedot : Window
     {
+        TilausDBEntities dBEntities = new TilausDBEntities();
+
         public formTuotetiedot()
         {
             InitializeComponent();
+            HaeTuotetiedot();
+        }
+
+        private void HaeTuotetiedot()
+        {
+            List<Tuotteet> tuotteets = new List<Tuotteet>();
+
+            var tuotetiedot = from d in dBEntities.Tuotteet
+                              select d;
+
+            dgTuotetiedotLista.ItemsSource = tuotetiedot.ToList();
+        }
+
+
+        private void BtnLisaaUusiTuote_Click(object sender, RoutedEventArgs e)
+        {
+            Tuotteet uusiTuote = new Tuotteet();
+
+            uusiTuote.Nimi = txtTuoteNimi.Text;
+            uusiTuote.Ahinta = decimal.Parse(txtTuoteHinta.Text);
+
+            dBEntities.Tuotteet.Add(uusiTuote);
+            dBEntities.SaveChanges();
+
+            HaeTuotetiedot();
+            txtTuoteNimi.Text = "";
+            txtTuoteHinta.Text = "";
+        }
+
+        private void DgTuotetiedotLista_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgTuotetiedotLista.SelectedIndex >= 0)
+            {
+                //haetaan valitun rivin ensimmäisen sarakkeen sisältö
+                TextBlock TuoteID = dgTuotetiedotLista.Columns[0].GetCellContent(
+                    dgTuotetiedotLista.Items[dgTuotetiedotLista.SelectedIndex]) as TextBlock;
+                if (TuoteID != null)
+                {
+                    txtTuoteID.Text = TuoteID.Text;
+                }
+
+                //haetaan valitun rivin toisen sarakkeen sisältö
+                TextBlock Tuotenimi = dgTuotetiedotLista.Columns[1].GetCellContent(
+                    dgTuotetiedotLista.Items[dgTuotetiedotLista.SelectedIndex]) as TextBlock;
+                if (Tuotenimi != null)
+                {
+                    txtTuoteNimiUpdDel.Text = Tuotenimi.Text;
+                }
+
+                //haetaan valitun rivin kolmannen sarakkeen sisältö
+                TextBlock TuoteHinta = dgTuotetiedotLista.Columns[2].GetCellContent(
+                    dgTuotetiedotLista.Items[dgTuotetiedotLista.SelectedIndex]) as TextBlock;
+                if (TuoteHinta != null)
+                {
+                    txtTuoteHintaUpdDel.Text = TuoteHinta.Text;
+                }
+            }
+        }
+
+        private void BtnPäivitäTuotetiedot_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPoistaTuotetiedot_Click(object sender, RoutedEventArgs e)
+        {
+            int tuoteid = int.Parse(txtTuoteID.Text);
+
+            Tuotteet poistaTuote = dBEntities.Tuotteet.Find(tuoteid);
+
+            if (poistaTuote !=null)
+            {
+                dBEntities.Tuotteet.Remove(poistaTuote);
+            }
+
+            dBEntities.SaveChanges();
+
+            HaeTuotetiedot();
+            txtTuoteID.Text = "";
+            txtTuoteNimiUpdDel.Text = "";
+            txtTuoteHintaUpdDel.Text = "";
         }
 
         private void BtnSuljeTuotetiedot_Click(object sender, RoutedEventArgs e)

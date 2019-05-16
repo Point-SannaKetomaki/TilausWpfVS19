@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="formTuotetiedot" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnSuljeTuotetiedot" Content="Sulje" HorizontalAlignment="Left" Margin="638,368,0,0" VerticalAlignment="Top" Width="120" Height="27" Click="BtnSuljeTuotetiedot_Click"/>
+        <Button x:Name="btnSuljeTuotetiedot" Content="Sulje" HorizontalAlignment="Left" Margin="638,368,0,0" VerticalAlignment="Top" Width="120" Height="27" Click="BtnSuljeTuotetiedot_Click" FontWeight="Bold"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="dgTuotetiedotLista" HorizontalAlignment="Left" Height="402" Margin="10,10,0,0" VerticalAlignment="Top" Width="327" SelectionChanged="DgTuotetiedotLista_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=TuoteID}" Header="TuoteId"/>
+                <DataGridTextColumn Binding="{Binding Path=Nimi}" Header="Nimi" />
+                <DataGridTextColumn Binding="{Binding Path=Ahinta}" Header="A-Hinta" />
+                <DataGridTextColumn Binding="{Binding Path=Kuva}" Header="Kuva" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblYlläpidäTuotetietoja" Content="Tuotetietojen ylläpito" HorizontalAlignment="Left" Height="27" Margin="411,27,0,0" VerticalAlignment="Top" Width="283" FontWeight="Bold"/>
+        <TextBox x:Name="txtTuoteNimi" HorizontalAlignment="Left" Height="27" Margin="411,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label x:Name="lblTuoteNimi" Content="Tuotteen nimi" HorizontalAlignment="Left" Height="27" Margin="411,73,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Label x:Name="lblTuoteHinta" Content="Hinta" HorizontalAlignment="Left" Height="27" Margin="612,73,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <TextBox x:Name="txtTuoteHinta" HorizontalAlignment="Left" Height="27" Margin="612,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnLisaaUusiTuote" Content="Lisää uusi" HorizontalAlignment="Left" Margin="411,141,0,0" VerticalAlignment="Top" Width="120" Height="27" FontWeight="Bold" Click="BtnLisaaUusiTuote_Click"/>
+        <TextBox x:Name="txtTuoteNimiUpdDel" HorizontalAlignment="Left" Height="27" Margin="477,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+        <Label x:Name="lblTuoteNimi_Copy" Content="Tuotteen nimi" HorizontalAlignment="Left" Height="27" Margin="477,201,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Label x:Name="lblTuoteHinta_Copy" Content="Hinta" HorizontalAlignment="Left" Height="27" Margin="678,201,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <TextBox x:Name="txtTuoteHintaUpdDel" HorizontalAlignment="Left" Height="27" Margin="678,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnPäivitäTuotetiedot" Content="Päivitä" HorizontalAlignment="Left" Margin="411,269,0,0" VerticalAlignment="Top" Width="120" Height="27" FontWeight="Bold" Click="BtnPäivitäTuotetiedot_Click"/>
+        <Button x:Name="btnPoistaTuotetiedot" Content="Poista" HorizontalAlignment="Left" Margin="536,269,0,0" VerticalAlignment="Top" Width="120" Height="27" FontWeight="Bold" Click="BtnPoistaTuotetiedot_Click"/>
+        <Label x:Name="lblTuoteID" Content="TuoteID" HorizontalAlignment="Left" Height="27" Margin="411,201,0,0" VerticalAlignment="Top" Width="61" FontWeight="Bold"/>
+        <TextBox x:Name="txtTuoteID" HorizontalAlignment="Left" Height="27" Margin="411,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
     </Grid>
 </Window>
