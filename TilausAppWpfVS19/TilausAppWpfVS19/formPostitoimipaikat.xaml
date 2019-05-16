@@ -18,9 +18,9 @@
         <Label x:Name="lblValitutPostinumeroTiedot" Content="Postinumerotietojen ylläpito" HorizontalAlignment="Left" Height="27" Margin="488,23,0,0" VerticalAlignment="Top" Width="249" FontWeight="Bold"/>
         <TextBox x:Name="txtPosNro" HorizontalAlignment="Left" Height="27" Margin="488,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
         <TextBox x:Name="txtPosTmip" HorizontalAlignment="Left" Height="27" Margin="589,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
-        <Button x:Name="btnPäivitäPTmip" Content="Päivitä" HorizontalAlignment="Left" Height="27" Margin="488,218,0,0" VerticalAlignment="Top" Width="96"/>
-        <Button x:Name="btnPoistaPTmip" Content="Poista" HorizontalAlignment="Left" Height="27" Margin="488,323,0,0" VerticalAlignment="Top" Width="96" Click="BtnPoistaPTmip_Click"/>
-        <TextBox x:Name="txtPosNroPoista" HorizontalAlignment="Left" Height="27" Margin="488,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
-        <TextBox x:Name="txtPosTmipPoista" HorizontalAlignment="Left" Height="27" Margin="589,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="btnPäivitäPTmip" Content="Päivitä" HorizontalAlignment="Left" Height="27" Margin="488,218,0,0" VerticalAlignment="Top" Width="96" Click="BtnPäivitäPTmip_Click"/>
+        <Button x:Name="btnPoistaPTmip" Content="Poista" HorizontalAlignment="Left" Height="27" Margin="589,218,0,0" VerticalAlignment="Top" Width="96" Click="BtnPoistaPTmip_Click"/>
+        <TextBox x:Name="txtPosNroUpdDel" HorizontalAlignment="Left" Height="27" Margin="488,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox x:Name="txtPosTmipUpdDel" HorizontalAlignment="Left" Height="27" Margin="589,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181"/>
     </Grid>
 </Window>
